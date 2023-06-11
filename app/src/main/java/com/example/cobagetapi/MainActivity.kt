@@ -24,8 +24,7 @@ class MainActivity : AppCompatActivity() {
         remoteGetdatamahasiswa()
     }
     private fun remoteGetdatamahasiswa() {
-        ApiClient.apiService.remoteGetdatamahasiswa().enqueue(object
-            : Callback<ApiResponse> {
+        ApiClient.apiService.remoteGetdatamahasiswa().enqueue(object : Callback<ApiResponse> {
             override fun onResponse(call: Call<ApiResponse>,
                                     response: Response<ApiResponse>) {
                 if (response.isSuccessful) {
@@ -36,8 +35,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            override fun onFailure(call: Call<ApiResponse>, t:
-            Throwable) {
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
                 Log.d("Error", t.stackTraceToString())
             }
         })
